@@ -31,7 +31,7 @@ The goals / steps of this project are the following:
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is found in compute_distortion_coefs() at [line 11](drawlanes.py#L14-46), and called at [line 50](drawlanes.py#L50) of drawlanes.py.
+The code for this step is found in compute_distortion_coefs() at [line 14](drawlanes.py#L14-46), and called at [line 50](drawlanes.py#L50) of drawlanes.py.
 
 I calibrated the camera by using a set of provided images provided from Udacity. The images are pictures of chessboards. For each image, I used cv2.findChessboardCorners() to locate the corners of squares (intersections between white and black squares), and appended the locations of these corners to an array "imgpoints."  For each image where corners were successfully found, I also appended "objpoints" to another array.  Objpoints represents a set of regularly spaced locations where the corners should lie if the image is dead center with a certain scaling.  By comparing the "objpoints" and "imgpoints" arrays, cv2.drawChessboardCorners() is able to extract distortion coefficients for the camera.Extracting the distortion coefficients only needed to be done once, at the beginning of the program, prior to the processing pipeline.
 
